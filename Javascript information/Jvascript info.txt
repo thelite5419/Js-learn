@@ -1,0 +1,185 @@
+- when we have multiple javascript files in the webpage  we can make a bundle of files using the API
+
+
+STACK AND HEAP-----------------------------------------------------------------------------
+the memory is used in two forms 	
+	1. stack
+	2. heap 
+
+1. stack - stack stors the primitive values such as variables floats and booleans 
+2. heap - it stores the non-primitives data types such as the refrence 
+
+- cause the primitives values dont store the refrences so if the related variables are changed so the other variabeles dont change 
+
+- the heap value stores the refrences into the stack so if the one refrence variable changes its values the other also change cause they are sharing the same information 
+
+for e.g 
+--- IN case of the Stack
+let myEmail = "prathameshpise6@gmail.com"
+let newEmail = myEmail;
+[here the datatypes are primitve and thier copy of both is stored into the stack differently]
+//so when,
+newEmail = "theprathamesh07@gmail.com"
+[it dosent chnage the value of the "myEmail" cause they are stores differently into the stack area]
+
+--- IN the case of Heap
+let firstval = {
+	id = 101,
+	name = 'abc',
+}
+
+let secVal = firstVal
+
+[in the obve case it we have consideres the object cause it is nonprimitive datatype and both variables points to the same object in the heap memory and variables stored into the stack]
+//so if,
+
+secVal.id = 102;
+console.log(firstVal);
+console.log(secVal);
+
+[both output statments will give the same objects cause they are referncing to the same object ]
+FIGURE_1.0 [WATCH IT IN THE FOLDER]
+
+
+------------------------------------------------------------------------------------------------------------------
+
+STRING--------------------------------------------------------------
+
+New wayto concate the string and the variables = 
+console.log(`this is the representation of the string ${variable} <- this is how we include the variables in the string`);
+
+methods -
+	variable.length()
+	variable.toUpperCase();
+	variable.toLowercase();
+	variable.charAt(number that you want to find what the char is at that number);
+	variable.substring(start, till you want string);
+	variable.slice()-> same as above but we can get last to start 
+	variable.trim() -> used to remove the spaces in the string[used in the form to remove the unnessasary spaces
+	variable.replace('20', '-') -> used yo replace chars in the string
+	variables.include('pra') -> used to find if it exist in the string or not 
+	variable.split('-') -> splites the string in multiple parts if it has the '-' e.g. = my-name-is => 'my', 'name', 'is';
+
+
+------------------------------------------------------------------------------------------------------
+
+NUMBERS -----------------------------------------------------
+
+simple pattern 
+const score = 400;
+console.log(score);
+-> 400
+
+
+-/making the var only for number =>
+const balance = new Number(90);
+console.log(balance)
+output -> [number : 90]
+
+
+-/ making the number to string 
+balance.tostring();
+
+-/floating pointer value fixing 
+balance.toFixed(1);
+-> 69.0
+
+------------------------------------------------------------------------------------------------------
+
+MATHS-------------------------------------------------------
+
+math library is perbulid in the js
+it is a object 
+
+methods
+	Math.abs(-4) => minus changed to positive
+	math.round(3.6) => rounds off the number (4)
+	math.ceil(4.2) => 5
+	math.ceil(4.2) => 4
+	math.random() => gives value from 0 to 1
+	math.min => finding small value from the array
+	math.max
+
+using the math.random to get the values from the 10 to 20 
+console.log(math.floor(math.random() *(max-min) +1) + min)
+
+
+------------------------------------------------------------------------------------------
+
+DATE-------------------------------------------------------
+initiaizing date
+
+let myDate = new Date();
+console.log(myDate.toString());
+
+
+cosole.log(myDate.toDateString());
+console.log(myDate.toDateString());
+console.log(myDate.toLocalString());
+
+"date is the object in the js"
+
+------------------------------------------------------------------------------------------
+
+Timestamp-------------------------------------------------
+initialization 
+
+let mytimestamp = date.now();
+
+
+------------------------------------------------------------------------------------------
+
+ARRAY----------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------
+
+Hoisting------------------------------------------------
+hoisting in javascript
+Understanding Hoisting in JavaScript
+
+Hoisting in JavaScript is a fundamental concept that refers to the language’s default behavior of moving declarations to the top of their scope. This means that declarations of variables and functions are moved to the top of their scope, making them accessible throughout that scope.
+
+How Hoisting Works
+
+Hoisting is a mechanism that occurs during the compilation phase, before code execution. It’s essential to understand that hoisting only moves declarations, not initializations. This means that variables declared with let and const are hoisted, but their values are not initialized until the point of declaration.
+
+Types of Scopes
+
+In JavaScript, there are two types of scopes:
+
+Global Scope: The scope outside the outermost function attached to the window.
+Local Scope: The scope inside the function being executed.
+Hoisting Examples
+
+Here are some examples to illustrate hoisting:
+
+Example 1:
+console.log(x); // Output: undefined
+var x = 10;
+
+In this example, the variable x is declared after it’s used, but due to hoisting, the declaration is moved to the top of the scope, making it accessible.
+
+Example 2:
+console.log(greeting()); // Output: "Hello"
+function greeting() {
+  return "Hello";
+}
+
+In this example, the greeting function is declared after it’s called, but due to hoisting, the declaration is moved to the top of the scope, making it accessible.
+
+Best Practices
+
+To avoid issues with hoisting, it’s recommended to declare all variables at the beginning of their scope. This ensures that variables are initialized before they’re used, and functions are declared before they’re called.
+
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+EVENT----------------------------------------------------------
+A click by a user
+to handle this event thier are event handler
+when the event handler happens some functions are envoked 
+ 
