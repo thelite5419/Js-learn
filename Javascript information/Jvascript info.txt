@@ -1,7 +1,10 @@
 - when we have multiple javascript files in the webpage  we can make a bundle of files using the API
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 STACK AND HEAP-----------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 the memory is used in two forms 	
 	1. stack
 	2. heap 
@@ -41,9 +44,12 @@ console.log(secVal);
 FIGURE_1.0 [WATCH IT IN THE FOLDER]
 
 
-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 STRING--------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 New wayto concate the string and the variables = 
 console.log(`this is the representation of the string ${variable} <- this is how we include the variables in the string`);
@@ -60,10 +66,18 @@ methods -
 	variables.include('pra') -> used to find if it exist in the string or not 
 	variable.split('-') -> splites the string in multiple parts if it has the '-' e.g. = my-name-is => 'my', 'name', 'is';
 
+3. Removing Leading and Trailing White Spaces, and Reducing Multiple White Spaces to a Single Space
+If you want to remove leading and trailing white spaces and also reduce multiple white spaces within the string to a single space, you can combine trim and replace:
 
-------------------------------------------------------------------------------------------------------
+let str = "   Hello   World!   ";
+let cleanedStr = str.trim().replace(/\s+/g, ' ');
+console.log(cleanedStr);  // "Hello World!"
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 NUMBERS -----------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 simple pattern 
 const score = 400;
@@ -84,9 +98,11 @@ balance.tostring();
 balance.toFixed(1);
 -> 69.0
 
-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MATHS-------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 math library is perbulid in the js
 it is a object 
@@ -104,9 +120,12 @@ using the math.random to get the values from the 10 to 20
 console.log(math.floor(math.random() *(max-min) +1) + min)
 
 
-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DATE-------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 initiaizing date
 
 let myDate = new Date();
@@ -119,23 +138,82 @@ console.log(myDate.toLocalString());
 
 "date is the object in the js"
 
-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timestamp-------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 initialization 
 
 let mytimestamp = date.now();
 
 
-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ARRAY----------------------------------------------------
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+initalization -> 
 
------------------------------------------------------------------------------------------
+const myArr = [1,2,3,'a',true]
+
+it is dynamic ccan hold multiple values at a time
+
+-//shallow - stack heap refrence change point 
+
+ various type to declare :
+1. const myHero  = ['shaktiman', 'batman'];
+2. const myAraay2 = new Array(1,2,3,4);
+
+methods 
+1. myarr.push(7) => pushing values in array at end 
+2. myarr.pop(8) => removes last value
+3. myarr.unshift(9) => insert array at start (time consumation issue cause need to add and shift whole array)
+4. myarr.shift() => removes first value
+5. myarr = newarr.join() => joins the array and converts the resul into the string
+6. arr.slice(start, end) => gives value from the start to end
+7. arr.splice(start, end) => different from the slice it manupulates the original array
+
+- passing the array in the array will end up in the array inside array
+8. array.concat(array2); => to join those arrays we use the concat method as the 
+- spread operator is the easy way to join two arrays
+9. arr.flat("depth") => flat the nested arrays can be un-nested using the flat
+10 Array.from("string") =>  we can convert the strings into the array using the from method 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OBJECT----------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- two ways to initialize
+
+1. literal
+const JsUser = {
+  Fname : 'prathamesh',
+  id : 101,
+  age : 20,
+  email : 'prathameshpise6@gmail.com',
+  "name IS" : "thelite"
+}
+
+2. singleton
+when we declare it as the constructors it is singleton
+
+2 ways to access the data inside object 
+	1. JsUser.Fname
+	2. JsUser["name IS"] => this is used when the key inside the object is the string and also when the key is the symbol
+
+methods
+1. Object.freeze(Obj) => freeze used to make the key value unchangeable
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Hoisting------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 hoisting in javascript
 Understanding Hoisting in JavaScript
 
@@ -174,11 +252,12 @@ Best Practices
 To avoid issues with hoisting, it’s recommended to declare all variables at the beginning of their scope. This ensures that variables are initialized before they’re used, and functions are declared before they’re called.
 
 
-
-
------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 EVENT----------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 A click by a user
 to handle this event thier are event handler
 when the event handler happens some functions are envoked 
