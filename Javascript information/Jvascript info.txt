@@ -1,8 +1,6 @@
 - when we have multiple javascript files in the webpage  we can make a bundle of files using the API
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 STACK AND HEAP-----------------------------------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 the memory is used in two forms 	
@@ -45,9 +43,7 @@ FIGURE_1.0 [WATCH IT IN THE FOLDER]
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 STRING--------------------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -73,9 +69,7 @@ let str = "   Hello   World!   ";
 let cleanedStr = str.trim().replace(/\s+/g, ' ');
 console.log(cleanedStr);  // "Hello World!"
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 NUMBERS -----------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -99,9 +93,7 @@ balance.toFixed(1);
 -> 69.0
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 MATHS-------------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 math library is perbulid in the js
@@ -121,9 +113,7 @@ console.log(math.floor(math.random() *(max-min) +1) + min)
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 DATE-------------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 initiaizing date
@@ -139,9 +129,7 @@ console.log(myDate.toLocalString());
 "date is the object in the js"
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Timestamp-------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 initialization 
@@ -150,9 +138,7 @@ let mytimestamp = date.now();
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ARRAY----------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 initalization -> 
@@ -183,9 +169,7 @@ methods
 10 Array.from("string") =>  we can convert the strings into the array using the from method 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 OBJECT----------------------------------------------------
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - two ways to initialize
@@ -209,10 +193,294 @@ when we declare it as the constructors it is singleton
 methods
 1. Object.freeze(Obj) => freeze used to make the key value unchangeable
 
+
+HOW TO MAKE OBJECT SINGLETON AND LITERALS MEANS BY CONSTRUCTOR
+ const instaUser = new Object(); // singleton object 
+ const instaUser = {} // non singleton object
+
+
+
+instaUser.id = "thelite_editx"; //changing object value
+instaUser.email = "theprathamesh07@gmail.com"; //changing object value
+instaUser.isLoggedIn = false; //changing object value
+
+console.log(instaUser);
+
+//object inside object 
+
+const regularUser= {
+  id  : "thelite_code",
+   name: {
+    fname : "prathamesh",
+
+  }
+}
+
+console.log(regularUser);
+console.log(regularUser.name.fname); // accessing the pbject inside object
+
+
+//combining the both object
+cosnt obj3 = Object.assign(obj1 , instaUser);
+
+
+//when we have multiple objects 
+obj3 = Object.assign({} , obj1, obj2 , instaUser); // {}(used in most of the production and used as empty object to store multiple values)used to store multiple object
+
+
+//when we have multiple objects 
+obj3 = Object.assign({} , obj1, obj2 , instaUser);
+
+//another way to assign the multiple object to a single object using the spread operatoe
+const obj = {...instaUser, ...obj3}
+
+
+//object inside the array 
+
+const arr = [
+  {
+    id : 1,
+    name : "nam"
+  },
+
+  {
+    lname : "Head",
+    
+  }
+]
+
+console.log( arr[0].name);
+
+//to check if the property is presernt in the array or not 
+const arrprop  = {
+  id : 101,
+  email: "the"
+}
+
+console.log(arrprop.hasOwnProperty('has'));
+
+DE-STRUCTURING 
+- destructing id used when we want to fetch the data from the api. it destructure the data 
+
+e.g. 
+const course = {
+  name: "the",
+  id : 101
+}
+const {name} = course;
+console.log(name);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+JSOn------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hoisting------------------------------------------------
+in the json the keys are the string
+{
+	"name" : "ABC"
+	"id" : "101"
+}
 
+
+gets api as above 
+[ => array
+	{}, => object
+	{},
+	{}, 
+]
+the api can be in the format of the object in the array in the JSON format
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FUNCTION------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- it is used to reduce the task that needs regular execution 
+- so when the function gets call it executes the program inside
+
+e.g.
+function num (a, b){
+  let c = a+b
+  return c;
+}
+
+console.log(num(2, 5));
+
+- we can also assign the function to variable 
+
+const result = num (5,5)
+console.log(result)
+
+- after the return statement in the function the will stop executing further if after the return some statements are remaining it will not read those statements
+
+function isLoggedIn(user){
+  if (user === undefined)
+    {
+      console.log(`not logged in`)
+      
+    }
+    else{
+      console.log(`${user} logged in`);
+    }
+}
+
+isLoggedIn();
+
+// used when we want to give some default value to it. we specify the name in the parameter
+function isLoggedIn(user = 'thelite'){
+  if (user === undefined)
+    {
+      console.log(`not logged in`)
+      
+    }
+    else{
+      console.log(`${user} logged in`);
+    }
+}
+
+isLoggedIn();
+
+
+//handling the object with the function 
+const user ={
+  id: 101,
+  name: "that"
+}
+
+function handleObject(any){
+  console.log(`${any.id} is the id `);
+}
+
+handleObject(user);
+
+
+handling the Array in the function 
+
+const myArray = [1,2,6,4]
+
+function getTheArray (any){
+  return  any[1]; 
+}
+
+console.log(getTheArray(myArray));
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+REST OPERATOR IN THE FUNCTION------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Used when the parameter values are not specified means if we go to shopping the things we will pick is not defined 
+
+used like the spread operator and based on the used cases it is idfied that if it is rest or spread
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SCOPEs------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//scope means the accesability of the variable in the program 
+
+let a = 10; //scope is is allocated till the curly braces (block scope)
+var b = 50; // it is acessible in the whole program (not recomended)(globle scope)
+const c = 60; //it is like a fixed value if it declared outside any scope then it cannot be chnage except when it is declred inside the block scope then it can be changed but it is only remain inside that scope
+
+console.log(`${a}, ${b}, ${c}`);
+
+
+// if the const and let is declared in both the global and block scope then the block scope is changable but only inside that scope
+
+let fixed = 100
+const pi = 3.14;
+
+if(true){
+  let fixed = 50;
+  const pi = 50 ;
+  console.log(`let inside the block scope : ${fixed}  \n const inside the block scope : ${pi}`);
+}
+// out side the block scope value at the inital are considered
+console.log(`let outside the block scope : ${fixed}  \n const inside the block scope : ${pi}`); 
+// we have to declare them inside the block if we dont want to change the gloable value 
+//after we declare them inside the scope thier scope remain till the block scope and they dont change the global value 
+// let can be used as it is but it will chnage the gloable value 
+//but the const need to be declare if we want to use them  
+
+//global scope is different in the both webpage and node 
+
+two ways for function 
+function addone (num){
+ return num+1;
+}
+
+console.log(addone(5));
+
+
+let addtwo = function addtwo (num){
+  return num+2;
+ }
+ 
+console.log(addtwo(5));// this will not generate the error but when we want to declare the function call before function  such as
+
+
+console.log(addone(5)); //this will not give error and run smoothly 
+function addone (num){
+ return num+1;
+}
+
+ 
+console.log(addtwo(5));
+let addtwo = function addtwo (num){
+  return num+2;
+ }// but this will give you the error cause we have given the variable for the function it will result in the hoisting problem
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+THIS KEYWORD ------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const user =  {
+userName : 'prathamesh07',
+id : "thelite",
+
+welcomeMessagr : function (){
+  console.log(`welcome ${this.userName} to the website`); // used to refer the currunt context 
+  console.log(this);
+}
+}
+
+user.welcomeMessagr();
+// changing the currunt context 
+user.userName = "vankatesh"//chnaging the currunt context and seeing the value 
+user.welcomeMessagr(); // it will give the new currunt value that is been allocated 
+
+console.log(this) // this will result in the empty curly braces cause we are  running this into the node enviroment but in the case of the running this in the webpage console it will give the currunt context of the webpage
+
+console.log(this) // run this in the webpage console
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ARROW FUNCTION ------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+this keyword used to refer to the currunt context of the program for e.g. 
+regular function cannot run the this key word so we use the arrow function to do that
+e.g.
+ function thisCheck (){
+  let userName = 'prathamesh'
+  console.log(this.cleauserName);
+ }
+
+ thisCheck();
+
+===> undefined
+dont tell this in the interview 
+
+BASIC SYNTAX OF THE ARROW FUNCTION 
+const addTwo = (n1, n2) => {
+return n1 + n2 ; 
+}
+
+console.log(addTwo(12, 25))
+
+use of the arrow function as above
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Hoisting------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 hoisting in javascript
 Understanding Hoisting in JavaScript
@@ -251,11 +519,39 @@ Best Practices
 
 To avoid issues with hoisting, it’s recommended to declare all variables at the beginning of their scope. This ensures that variables are initialized before they’re used, and functions are declared before they’re called.
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+immediately Invoked Function Expressions IIFE ------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-EVENT----------------------------------------------------------
+// sometimes pollution happens cause of the globle scope to avoid this we use the iife
 
+// how it is used
+
+// function one() {
+//   console.log("w/o iife");
+// }
+// one();
+
+// (function two() {
+//   console.log("w iife");
+// })();
+  // it is genarally used to speed up the execution and avoids the global scope pollution
+  // two braces is used ()()first one wraps the function inside it and the second one is used as the caller that calls the function unlike the regular fucntion where we call the functino using its name here we only add the empty braces a;ong with the wrapped funtion
+
+  // if you want to pass the parameters to the iife function it will goes like
+
+  ((name) => 
+    { console.log(`this is the name : ${name}`);
+})('pratahamesh');
+  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXECUTION OF THE JAVASCRIPT CODE----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JavaScript execution context 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EVENT----------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 A click by a user
