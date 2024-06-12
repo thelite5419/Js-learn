@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>thelite new </h1>
+  <button id="start">start</button>
+  <button id="stop">stop</button>
+
+  <script>
+    let intervalId;
+    document.getElementById('start').addEventListener('click', function() {
+      
+      if (!intervalId) {
+        intervalId = setInterval(function() {
+          console.log("interval running");
+        }, 1000);
+        console.log("interval started");
+      }
+    });
+
+    document.getElementById('stop').addEventListener('click', function() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        console.log("interval stopped");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -10,18 +10,18 @@
   <button id="buttonInterval">click Here</button>
 
 <script>
-  setInterval(function(){
+  /*setInterval(function(){
     console.log("theltie");
-  },3000)
+  },3000)*/ 
 
-  const thelite= (function(){
+  const interval = (function(){
     console.log("thelite");
   })
 
-  setInterval(thelite, 3000); 
+  const thelite = setInterval(interval, 3000); 
 
   document.querySelector("#buttonInterval").addEventListener('click', function(){
-    clearTimeout(thelite);
+    clearInterval(thelite);
     console.log("stopped")
   })
 </script>
