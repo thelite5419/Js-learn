@@ -1,4 +1,19 @@
-- when we have multiple javascript files in the webpage  we can make a bundle of files using the API
+- when we have multiple JavaScript files in the webpage  we can make a bundle of files using the API
+
+WORKING OF THE JAVASCRIPT ->
+	- JavaScript execution context 
+	- in the js exe context the global exe. is executed using the this operator
+	- then the memory is allocated with undefined values
+	- when a function is executed the reference is created 
+	- the function reference contain the memory phase 
+	- in the memory phase the value is allocated woth memory
+	- then execution phase is done
+	- values are declared
+
+CALLSTACKS = 
+	- it is a stack with the stack with the global execution at the bottom 
+	- then the function are pushed and then the function is executed and the they are removed
+	- when the function contain the another function they the execution context remains to the first function 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 STACK AND HEAP-----------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -7,10 +22,10 @@ the memory is used in two forms
 	1. stack
 	2. heap 
 
-1. stack - stack stors the primitive values such as variables floats and booleans 
-2. heap - it stores the non-primitives data types such as the refrence 
+1. stack - stack stores the primitive values such as variables floats and Booleans 
+2. heap - it stores the non-primitives data types such as the reference 
 
-- cause the primitives values dont store the refrences so if the related variables are changed so the other variabeles dont change 
+- cause the primitives values don't store the references so if the related variables are changed so the other variables don't change 
 
 - the heap value stores the refrences into the stack so if the one refrence variable changes its values the other also change cause they are sharing the same information 
 
@@ -160,7 +175,7 @@ methods
 4. myarr.shift() => removes first value
 5. myarr = newarr.join() => joins the array and converts the resul into the string
 6. arr.slice(start, end) => gives value from the start to end
-7. arr.splice(start, end) => different from the slice it manupulates the original array
+7. arr.splice(index, numberOfValuesYoUWantToDelete) => different from the slice it manupulates the original array
 
 - passing the array in the array will end up in the array inside array
 8. array.concat(array2); => to join those arrays we use the concat method as the 
@@ -543,18 +558,231 @@ immediately Invoked Function Expressions IIFE ----------------------------------
   ((name) => 
     { console.log(`this is the name : ${name}`);
 })('pratahamesh');
-  
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-EXECUTION OF THE JAVASCRIPT CODE----------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-JavaScript execution context 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 EVENT----------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 A click by a user
-to handle this event thier are event handler
+to handle this event their are event handler
 when the event handler happens some functions are envoked 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOR LOOP----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+same as the c
+
+- in the javascript we can loop on the arrays 
+
+let myArray = [1,2,3,4];
+console.log(`${myArray.length} '\n\n`);
+for (let index = 0; index < myArray.length; index++) {
+  const element = myArray[index];
+ console.log(element);
+}
+
+- break used to stop the loop that is ongoing 
+- the continue keyword is used to skip the current iteration and continues the loop by further iteration 
+
+while and do while same as the c and c++
+
+-// FOR OF 
+
+it is used to use the the for loop efficiently it automatically iterarte the loop till the values inside the variable is ended for example it is implemented into the string and arrays 
+for e.g.
+
+let myArray = ['prathamesh', 'nikhil', 'ajinkya'];
+for (const oneArr of myArray) {
+  console.log(oneArr);
+}
+
+ loop  on the string
+let myArray = 'prathamesh'
+for (const oneArr of myArray) {
+  console.log(oneArr);
+} 
+
+
+-//maps
+-used to give the unique value no duplicate one
+- used to get the values from the for of loop but can be print through for of loop 
+
+
+for in loop 
+this loop is used to get the index number of the arrsy and string
+
+for each loop 
+it is a method used to get the loop
+
+const loop = [1,2,2,4,5];
+
+loop.forEach( function (item){
+  console.log(item);
+})
+
+we pass the function in the method braces the function iterate through the each value and stores it into the function parameters as the above is the item and returns it 
+
+we can pass the arrow function in the method as the function
+like the different different types that is used to pass the function in this one the same is used
+
+for each dont return any values like above
+myArray = [1,2,3,4,5,6];
+
+const value = myArray.forEach((item) => {
+  return item
+});
+console.log(value);
+
+to use the return value we use the filter function 
+filter basically used to get the data that we want from the array 
+for e.g
+
+myArray = [1,2,3,4,5,6,4]
+
+const newarr = myArray.filter ((num) => {
+  if (num< 4)
+    return num
+  })
+
+  console.log(newarr);
+
+we can also chain the filter means we can nest the filter and map to get the accurate value
+-// reduce
  
+reduce is used to 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DOM Manipulation ----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+getElementById();
+title.style.{any property};
+innerText = content inside the element
+innerContent = different from the innerText such as it shows the hidden elements inside the  web-page
+innerHTML - used to get the whole element tag
+document.querySelector(".class" / "#id" / "p" / "h1") = used to get the tags
+querySelectorAll('all'); - this will give the array of the element we can change the style of it like the arrays using the index e.g. element[0].style.color = 'green'
+
+-// relations in the DOM
+
+-// creating the new element using the javascript 
+document.createElement('div');
+adding properties in the div 
+- classname
+- id
+
+setting Attributes 
+div.setAttribute("title", "generated title"); // more optimal to use 
+div.style.backgroundColor = "red"
+
+this is stored inside the memory we have to bring that in the web page 
+
+document.body.appendChild(div);
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Events----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- in js the events happens sequentially
+- when we have large scale project the onclick is not very feasible
+- also when we add the onclick on the id by document.getElementById("id").onclick this is not also a good practice 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="owl" style="height: 100px;
+    width: 100px;
+    background-color: black;"></div>
+  <script>
+    document.getElementById("owl").addEventListener('click', function(){
+      alert("div is clicked")
+    }) 
+  </script>
+</body>
+</html>
+
+-/ EVENT OBJECT 
+ document.getElementById("owl").addEventListener('click', function(e){
+      alert("div is clicked")
+
+------ e is the object 
+
+-//Event Propogation 
+2 types of concept 
+false value is deafault 
+event propogation has 2 types bubbling and capturing 
+
+capturing is default (false)
+bubbuling is used if needed (true )
+
+
+document.getElementById("owl").addEventListener('click', function(){
+      alert("div is clicked")
+    }true );
+
+bubbling is the concept where the child element is accesed and then the parent is accessed after
+
+e.g.
+document.getElementById("owl").addEventListener('click', function(){
+      console.log("parent");
+    }) 
+
+    document.getElementById("owl1").addEventListener('click', function(){
+      console.log("child")
+    }) 
+
+
+capturing is reverse 
+parent first child second
+
+-// defaultpreventer is used to prevent the the bubbling 
+document.getElementById("owl1").addEventListener('click', function(e){
+      e.preventDefault();
+      console.log("child");
+    }) 
+
+
+
+->>Target - used to get the element of the webpage
+
+document.getElementById("owl1").addEventListener('click', function(e){
+ 
+      console.log();
+    }) 
+
+
+e.target.parentNode -  used to get the parent element 
+
+
+-- removing the element from the webpage
+
+let removeIt = e.target
+removeIt.remove()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+async code----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+js is synchronous
+it is single threaded
+js comes with run time environment 
+we explicitly do asyn if needed
+
+it executes the statement consecutively 
+
+-//blocking and non blocking code
+blocking - it blocks the execution of the code till current statement gets executed
+non- blocking - if current statement takes to much time it goes to next statement
+ 
+fetching and reading files does the blocking 
+
+blocking is used when the one block of code is dependant on the other block of code
+
+VIEW FIGURE_02
