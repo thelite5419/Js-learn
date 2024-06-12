@@ -785,4 +785,12 @@ fetching and reading files does the blocking
 
 blocking is used when the one block of code is dependant on the other block of code
 
-VIEW FIGURE_02
+/////////////VIEW FIGURE_02
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+promise ----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- promise is the execution queue that yet to be completed
+- promise is completed in the future 
+- it has three states 
+- promises is the object 
