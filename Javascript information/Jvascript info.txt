@@ -794,3 +794,12 @@ promise ----------------------------------------------------------
 - promise is completed in the future 
 - it has three states 
 - promises is the object 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+fetch ----------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- fetch makes the new special queue for the tasks they are executed first rather than the other statements 
+-  whenever fetch i used it happens on two part 
+1. web browsers 
+2. one part for specifying memory space 
