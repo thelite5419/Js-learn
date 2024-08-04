@@ -27,16 +27,16 @@ the memory is used in two forms
 
 - cause the primitives values don't store the references so if the related variables are changed so the other variables don't change 
 
-- the heap value stores the refrences into the stack so if the one refrence variable changes its values the other also change cause they are sharing the same information 
+- the heap value stores the reference into the stack so if the one reference variable changes its values the other also change cause they are sharing the same information 
 
 for e.g 
 --- IN case of the Stack
 let myEmail = "prathameshpise6@gmail.com"
 let newEmail = myEmail;
-[here the datatypes are primitve and thier copy of both is stored into the stack differently]
+[here the datatypes are primitve and their copy of both is stored into the stack differently]
 //so when,
 newEmail = "theprathamesh07@gmail.com"
-[it dosent chnage the value of the "myEmail" cause they are stores differently into the stack area]
+[it doesn't change the value of the "myEmail" cause they are stores differently into the stack area]
 
 --- IN the case of Heap
 let firstval = {
@@ -62,7 +62,7 @@ STRING--------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-New wayto concate the string and the variables = 
+New way to concate the string and the variables = 
 console.log(`this is the representation of the string ${variable} <- this is how we include the variables in the string`);
 
 methods -
