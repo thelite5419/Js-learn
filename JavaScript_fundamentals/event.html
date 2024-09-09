@@ -1,0 +1,54 @@
+//in js the events happens sequentially
+//when we have large scale project the onclick is not very feasible
+//also when we add the onclick on the id by document.getElementById("id").onclick this is not also a good practice 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="owl" style="height: 100px;
+    width: 100px;
+    background-color: black;"> 
+  
+    <div id="owl1" style="height: 50px;
+    width: 50px;
+    background-color: rgb(255, 0, 0);"></div>
+    
+  </div>
+  <script>
+    document.getElementById("owl").addEventListener('click', function(e){
+      e.preventDefault();
+      console.log("parent");
+    }) 
+
+    document.getElementById("owl1").addEventListener('click', function(e){
+      e.preventDefault();
+      console.log("child");
+    }) 
+
+    
+document.getElementById("owl1").addEventListener('click', function(e){
+
+  console.log(e.target);
+  let removeIt = e.target
+removeIt.remove()
+}) 
+
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

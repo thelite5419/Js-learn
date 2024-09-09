@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>thelite</h1>
+  <button id="buttonInterval">click Here</button>
+
+<script>
+  /*setInterval(function(){
+    console.log("theltie");
+  },3000)*/ 
+
+  const interval = (function(){
+    console.log("thelite");
+  })
+
+  const thelite = setInterval(interval, 3000); 
+
+  document.querySelector("#buttonInterval").addEventListener('click', function(){
+    clearInterval(thelite);
+    console.log("stopped")
+  })
+</script>
+</body>
+</html>

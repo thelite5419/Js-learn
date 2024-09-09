@@ -1,0 +1,51 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+    font-size: small;
+}
+
+
+header{
+    height: 50px;
+    background-color: #1f3232;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 300px;
+    
+}
+
+.color{
+    color: rgb(255, 149, 0);
+}
+
+main{
+    background-color: #007185;
+    height: 600px;
+    
+}
+
+footer{
+    height: 100px;
+    background-color: #ddd;
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: #ddd;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    
+}
+
+button{
+    background-color: orange;
+}
+

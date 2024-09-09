@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .iframecourse {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding-bottom: 400px;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .table-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-edit {
+            background-color: #007bff;
+        }
+        .btn-save {
+            background-color: #28a745;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        @media screen and (max-width: 768px) {
+            table, th, td {
+                display: block;
+            }
+            th, td {
+                padding: 10px;
+                text-align: right;
+                position: relative;
+            }
+            th::before, td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                padding-left: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark" >
+        <a class="navbar-brand" href="home-page-ap.html">Marks-Entry-App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+       
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="staff-home.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">options</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  options
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="showstudentstaff.html">show students </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="staffcompletedstaff.html">completed Tasks</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a href="staff/login.html" id="logout-icon" class="nav-item" title="Logout">
+              <img src="image.png" alt="Logout Icon" style="height: 8vh; margin-right: 10vw;">
+          </a>
+           </form>
+        </div>
+      </nav>
+<br>
+<div class="iframecourse">
+
+<div class="table-container">
+    <h1>Course DAC</h1>
+    <h2>Pending Tasks</h2>
+    <table id="pendingTasksTable">
+        <thead>
+            <tr>
+                <th>Staff Name</th>
+                <th>Student Name</th>
+                <th>Group Name</th>
+                <th>Subject Name</th>
+                <th>Theory</th>
+                <th>Lab</th>
+                <th>IA1</th>
+                <th>IA2</th>
+                <th>From Date</th>
+                <th>Till Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Staff Name">test</td>
+                <td data-label="Student Name">s1</td>
+                <td data-label="Group Name">D1</td>
+                <td data-label="Subject Name">Java</td>
+                <td data-label="Theory">0</td>
+                <td data-label="Lab">0</td>
+                <td data-label="IA1">0</td>
+                <td data-label="IA2">0</td>
+                <td data-label="From Date">May 02, 2024</td>
+                <td data-label="Till Date">May 02, 2024</td>
+                <td data-label="Actions"><button class="btn btn-edit" onclick="editRow(this)">Edit</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+</div>
+
+<script>
+    function editRow(button) {
+        let row = button.parentNode.parentNode;
+        let cells = row.getElementsByTagName('td');
+        if (button.innerText === 'Edit') {
+            for (let i = 4; i <= 7; i++) {
+                let value = cells[i].innerText;
+                cells[i].innerHTML = `<input type="number" value="${value}" style="width: 60px;">`;
+            }
+            button.innerText = 'Save';
+            button.classList.remove('btn-edit');
+            button.classList.add('btn-save');
+        } else {
+            for (let i = 4; i <= 7; i++) {
+                let input = cells[i].getElementsByTagName('input')[0];
+                cells[i].innerText = input.value;
+            }
+            button.innerText = 'Edit';
+            button.classList.remove('btn-save');
+            button.classList.add('btn-edit');
+            // Make the PUT request here with the updated data
+        }
+    }
+</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

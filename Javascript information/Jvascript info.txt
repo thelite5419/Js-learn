@@ -792,9 +792,34 @@ promise ----------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 - promise is the execution queue that yet to be completed
 - promise is completed in the future 
-- it has three states 
+- it has three states - pending, resolved, rejected  
 - promises is the object 
 
+cosnt promise = new Promise((resolve, reject)=> {
+
+cosnt randomNum = Math.floor(Math.random()*10);
+if (random <5){
+resolve("the random number is :")
+else{
+reject (the)
+}
+}, 1000)
+
+
+promise
+.then((result) =>{
+clo (result)
+})
+.catch((rejct) = > {
+clo(reject)
+})
+
+application -- 
+used in asynchronous opeartions
+api calls 
+file handling
+data fetching 
+event handling
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 fetch ----------------------------------------------------------

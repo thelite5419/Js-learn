@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>local storage</title>
+</head>
+<body>
+  <script>
+    let product = {
+      ProducNm : "BOAT earbuds",
+      ProductPrice : 999,
+      Description : {
+          Features : "noise cancalation",
+      },
+    };
+
+    /*localStorage.setItem('product',JSON.stringify(product));
+    console.log(product);
+    let product1 = JSON.parse(localStorage.getItem('produc'));
+    console.log('product1');
+    console.log(product1);*/
+
+    localStorage.clear();
+  </script>
+</body>
+</html>

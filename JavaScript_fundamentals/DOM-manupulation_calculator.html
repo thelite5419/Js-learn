@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic calculator</title>
+    <style>
+      input {
+        margin: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>calculator</h1>
+    <input type="text" id="firstNumber" placeholder="enetr the first number" />
+    <br />
+    <input type="text" id="secNumber" placeholder="Enetr the Second Number" />
+    <br />
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="div()">/</button>
+    <br />
+    <input type="text" placeholder="result" id="result"/>
+    <script>
+      let firstValueIs = document.getElementById("firstNumber");
+      let secondValueIs = document.getElementById("secNumber");
+
+      function plus(){
+        let resultValue = parseInt(firstValueIs.value) + parseInt(secondValueIs.value) 
+        finalResult(resultValue);
+      }
+
+      function minus(){
+        let resultValue = firstValueIs.value - secondValueIs.value 
+        finalResult(resultValue);
+      }
+      
+      function mul(){
+        let resultValue = firstValueIs.value * secondValueIs.value 
+        finalResult(resultValue);
+      }
+      
+      function div(){
+        let resultValue = firstValueIs.value / secondValueIs.value 
+        finalResult(resultValue);
+      }
+     
+      function finalResult(x){
+        let theEndResult = document.getElementById("result");
+        theEndResult.value = x;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  /* let age;
+  function printage(){
+    console.log(age);
+  }
+  age = 15;
+  printage();
+  age = 23;
+  printage();*/
+     
+
+  function oddEven(x){
+    if (x % 2 == 0){
+      console.log(`${x} = this number is EVEN`);
+    }
+    else{
+      console.log(`${x} = this number is ODD`);
+    }
+  }
+  oddEven(25);
+  oddEven(54);
+  oddEven(254);
+
+
+  function largerNumber(p,v){
+    let result = p > v ? `${p} is larger`:`${v} is larger`;
+    console.log(result)
+  }
+  largerNumber(5,3);
+  largerNumber(7,85);
+
+  function celToFer(cel)
+  {
+    return (9/5)*cel+32;
+  }
+
+  let res = celToFer(52);
+  console.log(res)
+
+  res = celToFer(2);
+  console.log(res)
+  </script>
+</body>
+</html>

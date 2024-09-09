@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice set</title>
+
+  <style>
+    button{
+      height: 100px;
+      width: 100px;
+      border-radius: 15px;
+      border: none;
+      font-size: 25px;
+    }
+
+    .red{
+      background-color: red;
+    }
+
+    .green{
+      background-color: green;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1 id="greeting"></h1>
+
+  <button id="NumOftimesClicked" onclick="UpdateTheButton();"></button>
+
+  <script>
+    realTime('prathamesh');
+    let buttonClicked = localStorage.getItem('buttonClickedCount')||null;
+    
+    function UpdateTheButton(){
+      localStorage.setItem('buttonClickedCount', buttonClicked)
+      
+      buttonClicked++;
+      let buttonText = document.querySelector('#NumOftimesClicked');
+      
+      if(buttonClicked % 2 == 0){
+        buttonText.classList.remove('green');
+        buttonText.classList.add('red');
+      }
+      else{
+        buttonText.classList.remove('red');
+        buttonText.classList.add('green');
+      }
+      buttonText.innerText = buttonClicked;
+    }
+
+    function realTime(name = 'dear'){
+      let time = new Date();
+      let TimeRightNow = time.getHours();
+      console.log(TimeRightNow);
+      let hTagGreet = document.querySelector('#greeting');
+
+      if(TimeRightNow > 6 && TimeRightNow < 12){
+        hTagGreet.innerText = `Good Morning ${name}`;
+      }
+
+      else if(TimeRightNow > 12 && TimeRightNow < 15){
+        hTagGreet.innerText = `Good afternoon ${name}`;
+      }
+
+      else if(TimeRightNow > 15 && TimeRightNow < 19){
+        hTagGreet.innerText = `Good evening ${name}`;
+      }
+
+      else if(TimeRightNow > 19 && TimeRightNow < 24){
+        hTagGreet.innerText = `Good night ${name}`;
+      }
+    }
+  </script>
+</body>
+</html>
