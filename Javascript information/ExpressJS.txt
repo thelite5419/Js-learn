@@ -1,5 +1,0 @@
-express - it is framework of the js which is used to make the backend API 
-it is server side framework 
-used to install through the npm 
-npm install express - to install the express for use it it stored in the nodemodule 
-packege.json used to save the information about the app 

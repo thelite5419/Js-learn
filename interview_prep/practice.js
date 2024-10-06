@@ -1,4 +1,4 @@
-//waprogram to reverse the array without using the inbuilt methods
+// waprogram to reverse the array without using the inbuilt methods
 /*
 function reverseArrayToNewArray(originalArray) {
     let reversedArray = [];
